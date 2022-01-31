@@ -1,0 +1,8 @@
+# Vue-CLI로 프로젝트 생성
+1. Manually select features
+2. Choose Vue version, Babel, Linter/Prettier, Unit Testing
+3. 뷰 버전 2.x
+4. ESLint + Prettier
+5. lint on save
+6. In dedicated config files
+7. no
