@@ -1,0 +1,20 @@
+# 파일의 절대 경로를 이용한 import 방법 (vscode)
+1. 프로젝트 루트 폴더에 jsconfig.js 파일 생성
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./src/*"
+      ],
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
+2. @/ 로 src 폴더에 바로 접근이 가능하다.
