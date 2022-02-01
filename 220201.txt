@@ -1,5 +1,5 @@
 # 파일의 절대 경로를 이용한 import 방법 (vscode)
-1. 프로젝트 루트 폴더에 jsconfig.js 파일 생성
+1. 프로젝트 루트 폴더에 jsconfig.json 파일 생성
 {
   "compilerOptions": {
     "baseUrl": ".",
