@@ -1,0 +1,10 @@
+# API 설정 공통화
+* axios.create 를 이용해서 baseURL 등 공통 설정을 선언할 수 있다.
+
+# .env(환경 변수 파일) 파일 설정 방법
+* 루트 폴더에 .env 파일 생성 후 환경 변수 작성
+* "VUE_APP_" 접두사가 붙은 변수는 자동으로 들고 올 수 있게 로드 된다.
+
+# Vue CLI의 env 파일 규칙과 실무 환경 구성 방법
+* 개발 환경과 배포 환경 등 다양한 환경에서 키 값을 변경하는 것이 아니라 .env.development(개발 모드에서 우선 적용, .env.production(production 모드에서 우선 적용)
+* https://cli.vuejs.org/guide/mode-and-env.html#modes-and-environment-variables
