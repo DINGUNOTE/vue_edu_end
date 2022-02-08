@@ -8,17 +8,13 @@
       <label for="password">pw: </label>
       <input id="password" type="text" v-model="password" />
     </div>
-    <div>
-      <label for="nickname">nickname: </label>
-      <input id="nickname" type="text" v-model="nickname" />
-    </div>
-    <button type="submit">회원 가입</button>
+    <button type="submit">로그인</button>
     <p>{{ logMessage }}</p>
   </form>
 </template>
 
 <script>
-import { registerUser } from '@/api/index';
+import { loginUser } from '@/api/index';
 
 export default {
   data() {
@@ -26,7 +22,6 @@ export default {
       // form values
       username: '',
       password: '',
-      nickname: '',
       // log
       logMessage: '',
     };
@@ -36,17 +31,15 @@ export default {
       const userData = {
         username: this.username,
         password: this.password,
-        nicname: this.nicname,
       };
-      const { data } = await registerUser(userData);
-      console.log(data.username);
-      this.logMessage = `${data.username}님이 가입되었습니다.`;
+      const { data } = await loginUser(userData);
+      console.log(data.user.username);
+      this.logMessage = `${data.user.username} 님 환영합니다.`;
       this.initForm();
     },
     initForm() {
       this.username = '';
       this.password = '';
-      this.nickname = '';
     },
   },
 };
