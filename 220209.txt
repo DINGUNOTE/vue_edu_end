@@ -1,2 +1,46 @@
 # 자바스크립트로 페이지 이동하기(Programmatic Navigation)
 * Vue Router에서 router.push 명령어로 페이지 이동을 구현할 수 있다.
+
+# HTTP 헤더에 토큰 값을 싣는 방법
+axios.create({
+    headers: {
+      Authorization: store.state.token, // 담을 값
+    },
+})
+* 문제점 : 로그인이 성공했을 때 해당 값이 HTTP 헤더 Authorization 값에 담으려고 했으나 해당 토큰 값을 받기 전에 미리 빈 값을 담아버림
+
+# Axios 인터셉터(Interceptors)
+* 서버로 요청을 보내는 것과 서버로 부터 받은 응답을 화면단에서 처리하기 전에 추가 로직을 넣을 수 있는 것
+* https://github.com/axios/axios#interceptors
+
+# 인터셉터를 이용한 HTTP 헤더 설정
+export function setInterceptors(instance) {
+  // Add a request interceptor
+  instance.interceptors.request.use(
+    function(config) {
+      // Do something before request is sent
+      // console.log(config);
+      config.headers.Authorization = store.state.token;
+      return config;
+    },
+    function(error) {
+      // Do something with request error
+      return Promise.reject(error);
+    },
+  );
+
+  // Add a response interceptor
+  instance.interceptors.response.use(
+    function(response) {
+      // Any status code that lie within the range of 2xx cause this function to trigger
+      // Do something with response data
+      return response;
+    },
+    function(error) {
+      // Any status codes that falls outside the range of 2xx cause this function to trigger
+      // Do something with response error
+      return Promise.reject(error);
+    },
+  );
+  return instance;
+}
