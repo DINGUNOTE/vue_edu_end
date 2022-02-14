@@ -1,0 +1,14 @@
+# 뷰 필터
+* filters를 활용해서 텍스트 형식을 변경할 수 있다. (소문자로 받은 데이터를 대문자로 변경, Date 데이터를 받아서 년월일시간 단위로 형식을 변경, ... 등)
+* https://kr.vuejs.org/v2/guide/filters.html
+
+# 라우터 네비게이션 가드
+* 특정 라우터 url에 접근을 막는 기능 (로그인을 하지 않고 로그인이 필요한 URL에 접근했을 때, ...)
+* to : 이동하려는 페이지, from : 현재 페이지, next : 페이지 이동할 때 호출하는 API
+* next가 호출되어야 다음 페이지로 이동이 된다.
+* https://router.vuejs.org/guide/advanced/navigation-guards.html
+
+# Jest
+* javascript 테스트 라이브러리 중 하나
+* Facebook이 개발했고 높은 사용률을 가지고 있고, 문서화가 잘 되어 있다.
+* 리액트 뷰 등 다른 프레임워크들과 함께 사용할 수 있다.
