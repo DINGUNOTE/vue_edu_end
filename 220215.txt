@@ -1,0 +1,4 @@
+# Vue Test Utils
+* Vue 공식 테스트 라이브러리
+* https://v1.test-utils.vuejs.org/guides/
+* shallowMount, find 등 뷰 유닛들을 테스트 할 때 편한 API 들이 있다.
